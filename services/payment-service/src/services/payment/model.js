@@ -9,22 +9,29 @@ mongoose.connect(mongoUrl, {
 const { Schema } = mongoose
 const schema = new Schema(
   {
+    image: {
+      type: String,
+      required: true,
+    },
+    dateTime: {
+      type: Date,
+      required: true,
+    },
+    amount: {
+      type: Number,
+      required: true,
+    },
+    name: {
+      type: String,
+    },
+    address: {
+      type: String,
+    },
+    phoneNumber: {
+      type: String,
+    },
     email: {
       type: String,
-      required: true,
-      unique: true,
-    },
-    password: {
-      type: String,
-      required: true,
-    },
-    firstName: {
-      type: String,
-      required: true,
-    },
-    lastName: {
-      type: String,
-      required: true,
     },
   },
   { timestamps: true }
@@ -35,4 +42,4 @@ schema.virtual('fullName').get(function() {
   return fullName
 })
 
-export const UserModel = mongoose.model('User', schema)
+export const PaymentModel = mongoose.model('Payment', schema)

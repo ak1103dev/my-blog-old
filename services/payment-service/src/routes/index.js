@@ -1,10 +1,8 @@
 import { Router } from 'express'
 
-import users from '../services/user/routes'
-import shops from '../services/shop/routes'
+import payment from '../services/payment/routes'
 
 const router = Router()
-router.use('/users', users)
-router.use('/shops', shops)
+router.use('/payment', payment)
 
 export default router

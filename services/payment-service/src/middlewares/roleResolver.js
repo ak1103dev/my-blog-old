@@ -5,3 +5,9 @@ export const me = (req, res, next) => {
     res.status(401).send({ errorCode: 'ONLY_ME' })
   }
 }
+
+const roleResolver = () => (req, res, next) => {
+  next()
+}
+
+export default roleResolver
